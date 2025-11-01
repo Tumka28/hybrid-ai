@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.db
+moviepy/
+memory/
+nap.ollama.listener.service
