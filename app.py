@@ -67,3 +67,20 @@ if st.button("Илгээх"):
     memory.append({"time": str(datetime.now()), "user": user_input, "ai": ai_response})
     save_memory(memory)
     st.success("Хариулт амжилттай хадгалагдлаа ✅")
+import streamlit as st
+from hybrid_chatbot import chat_with_ai  # эсвэл өөр гол функцээ энд импортлоорой
+
+def main():
+    st.title("🤖 Hybrid AI Assistant")
+    st.write("Тавтай морил Tumka28! 🚀")
+    
+    user_input = st.text_input("Ямар асуулт байна?")
+    if st.button("AI хариулах"):
+        if user_input:
+            response = chat_with_ai(user_input)
+            st.success(response)
+        else:
+            st.warning("Юу бичихээ оруулна уу!")
+
+if __name__ == "__main__":
+    main()
