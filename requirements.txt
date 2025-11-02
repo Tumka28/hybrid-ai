@@ -4,7 +4,6 @@ numpy
 requests
 Pillow
 moviepy
-sqlite3-binary
 openai
 langchain
 python-dotenv
