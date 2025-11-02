@@ -1,0 +1,10 @@
+streamlit==1.38.0
+pandas
+numpy
+requests
+Pillow
+moviepy
+sqlite3-binary
+openai
+langchain
+python-dotenv
