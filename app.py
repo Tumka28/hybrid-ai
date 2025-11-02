@@ -1,4 +1,8 @@
 import streamlit as st
+
+# 🧠 Streamlit тохиргоо — үүнийг хамгийн эхэнд байрлуул
+st.set_page_config(page_title="Hybrid AI Assistant", layout="wide")
+
 import media_edit
 import requests
 import json
@@ -6,10 +10,15 @@ import os
 from datetime import datetime
 from hybrid_chatbot import chat_with_ai
 
-# 🧠 Streamlit тохиргоо — үүнийг хамгийн эхэнд байрлуул
-st.set_page_config(page_title="Hybrid AI Assistant", layout="wide")
-
 # Sidebar menu
+st.sidebar.title("🧩 Нэмэлт хэрэгсэл")
+menu = st.sidebar.radio("Сонгох:", ["🤖 AI чат", "🎬 Видео засварлагч"])
+
+if menu == "🎬 Видео засварлагч":
+    media_edit.media_edit_ui()
+else:
+    st.header("🤖 Түмэнжаргалын Hybrid AI System")
+    st.write("Local Ollama + Memory + Chat Interface")
 st.sidebar.title("🧩 Нэмэлт хэрэгсэл")
 menu = st.sidebar.radio("Сонгох:", ["🤖 AI чат", "🎬 Видео засварлагч"])
 
