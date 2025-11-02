@@ -82,3 +82,24 @@ if prompt:
             reply = ask_ollama(prompt)
     st.markdown(f"🤖 **AI:** {reply}")
     save_memory("assistant", reply)
+import requests
+import json
+
+def chat_with_ai(prompt):
+    """
+    Local Ollama API эсвэл chatbot сервер рүү текст илгээж хариу авна.
+    """
+    try:
+        url = "http://127.0.0.1:11434/api/generate"
+        payload = {"model": "llama3.1", "prompt": prompt}
+        response = requests.post(url, json=payload, stream=True)
+
+        reply = ""
+        for line in response.iter_lines():
+            if line:
+                data = json.loads(line.decode("utf-8"))
+                if "response" in data:
+                    reply += data["response"]
+        return reply.strip() or "⚠️ AI-аас хариу ирсэнгүй."
+    except Exception as e:
+        return f"❌ Алдаа гарлаа: {e}"
