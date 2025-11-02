@@ -60,7 +60,7 @@ def ask_openai(prompt):
         return f"OpenAI алдаа: {e}"
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="Hybrid AI Chat", page_icon="🤖")
+#st.set_page_config(page_title="Hybrid AI Chat", page_icon="🤖")
 st.title("🤖 Hybrid AI Chat — OpenAI + Ollama")
 st.write("Интернеттэй үед GPT-4 ашиглана, оффлайн үед Ollama ажиллана.")
 
