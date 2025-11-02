@@ -12,7 +12,7 @@ from hybrid_chatbot import chat_with_ai
 
 # Sidebar menu
 st.sidebar.title("🧩 Нэмэлт хэрэгсэл")
-menu = st.sidebar.radio("Сонгох:", ["🤖 AI чат", "🎬 Видео засварлагч"])
+menu = st.sidebar.radio("Сонгох:", ["🤖 AI чат", "🎬 Видео засварлагч"], key="main_menu")
 
 if menu == "🎬 Видео засварлагч":
     media_edit.media_edit_ui()
